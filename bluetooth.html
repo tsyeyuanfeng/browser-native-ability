@@ -8,13 +8,16 @@
 </head>
 
 <body>
+    <button onclick="useBlueTooth()">使用蓝牙功能</button>
     <script>
-        navigator.bluetooth.requestDevice({
-            acceptAllDevices: true,
-            optionalServices: ['battery_service']
-        }).then(device => { 
-            console.log(device);
-        }).catch(error => { console.log(error); });
+        function useBlueTooth() {
+            navigator.bluetooth.requestDevice({
+                acceptAllDevices: true,
+                optionalServices: ['battery_service']
+            }).then(device => {
+                console.log(device);
+            }).catch(error => { console.log(error); });
+        }
     </script>
 </body>
 
